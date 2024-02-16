@@ -1,0 +1,250 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.toDoOpenButton{
+  height: 50px;
+  font-size: 22px;
+  border-radius: 10%;
+  background-color: #282c34;
+  color: #61dafb;
+  border: 3px solid  #61dafb;
+  cursor: pointer;
+}
+.counterOpenButton{
+  height: 50px;
+  font-size: 22px;
+  border-radius: 10%;
+  background-color: #282c34;
+  color: #61dafb;
+  border: 3px solid  #61dafb;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.toDoOpenButton:hover{
+  background-color: rgb(0, 0, 0);
+  font-size: 32px;
+}
+.counterOpenButton:hover{
+  background-color: rgb(0, 0, 0);
+  font-size: 32px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.todopage{
+  background-color: #282c34;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.counterpage{
+  background-color: #282c34;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.back{
+  height: 40px;
+  width: 80px;
+  font-size: 22px;
+  background-color: #282c34;
+  border-radius: 10%;
+  color: #61dafb;
+  border: 3px solid  #61dafb;
+  cursor: pointer;
+  top: 10px;
+  margin-left: 10px;
+  position: relative;
+}
+.back:hover{
+  background-color: rgb(0, 0, 0);
+  font-size: 25px;
+}
+.toDosContainer{
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  border: 5px solid  #61dafb;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background:  #61dafb; 
+  border-radius: 5px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.inputOfAdd{
+  margin-left: -10%;
+  margin-top: 5px;
+  height: 30px;
+  width: 300px;
+  font-size: 22px;
+  background-color: transparent;
+  border: 3px solid  #61dafb;
+  color: #61dafb;
+  font-size: 17px;
+  padding-left: 5px;
+  text-decoration-line: none;
+}
+.buttonOfAdd{
+  margin-top: 6px;
+  margin-left: 5px;
+  height: 36px;
+  width: 50px;
+  position: absolute;
+  background-color: transparent;
+  border: 3px solid  #61dafb;
+  cursor: pointer;
+  color: #61dafb;
+  font-size: 17px;
+}
+.buttonOfAdd:hover{
+  background-color: black;
+  font-size: 19px;
+}
+.todo{
+  height: 30px;
+  width: 570px;
+  border: 3px solid #61dafb ;
+  margin-top: 10px;
+  margin-left: 5px; 
+  text-align:center;
+  padding-left: 5px;
+  color: #61dafb;
+  font-size: 17px;
+  justify-content: flex-end;
+  display: flex;
+}
+.delete{
+  background-color: red;
+  cursor: pointer;
+}
+.done{
+  cursor: pointer;
+}
+.edit{
+  cursor: pointer;
+}
+.todotext{
+  width: 800px;
+  position: relative;
+  margin-right: 5px;
+  text-align: left;
+}
+.editmood{
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  border: 5px solid  #61dafb;
+  background-color: #2d4352;
+  align-items: center;
+}
+.editmoodinput{
+  width: 400px;
+  height: 30px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border:3px solid #61dafb;
+  background-color: transparent;
+  font-size: 17px;
+  padding-left: 5px;
+  color: #61dafb;
+}
+.editmoodsavebutton{
+  top: 50%;
+  position: relative;
+  background-color: rgb(8, 196, 8);
+  width: 100px;
+  right: 20px;
+}
+.editmoodcancelbutton{
+  width: 100px;
+  top: 50%;
+  position: relative;
+  background-color: gray;
+}
+.editmooddeletebutton{
+  width: 100px;
+  top: 50%;
+  position: relative;
+  background-color: red;
+  left: 20px;
+}
+.countercontainer{
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  border: 5px solid  #61dafb;
+  font-size: 122px;
+  text-align: center;
+  align-items: center3
+  ;
+}
+.countercontainer > button{
+  height: 50px;
+  width: 50px;
+  border: 2px solid #61dafb;
+  background-color: transparent;
+  font-size: 40px;
+  cursor: pointer;
+}
