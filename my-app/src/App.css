@@ -176,6 +176,7 @@
   cursor: pointer;
 }
 .todotext{
+  margin: 0;
   width: 800px;
   position: relative;
   margin-right: 5px;

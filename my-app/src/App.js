@@ -1,32 +1,53 @@
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import Todo from './components/todo/todo';
+import Todo2 from './components/todo_useReducer/todousereducer';
 import Counter from './components/counter/counter';
+
+import { todoType } from './utils/constants';
+
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  let [state, setState] = useState('');
+  const [type, setType] = useState(null);
 
-  function changeTaskPosation (value){
-    return setState(value)
-  };
-  function getBack(){
-    return setState('')
-  }
-  console.log(state)
+  const isTodo = useMemo(() => type === todoType.todo, [type]);
+  const isCounter = useMemo(() => type === todoType.counter, [type]);
+
+  const changeTaskPosation = useCallback((event) => {
+    setType(event.target.value);
+  }, [setType]);
+
+  const getBack = useCallback(() => {
+    setType(null);
+  }, [setType]);
+
   return (
     <div className="App">
-      {state === 'todo' ? <Todo back={getBack}/> 
-      : state === 'counter' ? <Counter back={getBack}/> :
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={(e) => changeTaskPosation(e.target.value)} value={'todo'} className='toDoOpenButton'>ToDo</button>
-        <button onClick={(e) => changeTaskPosation(e.target.value)} value={'counter'}className='counterOpenButton'>Counter</button>
-        click on the task you want      
-        </header>
-}
+      {isTodo && <Todo back={getBack}/>}
+      {isCounter && <Counter back={getBack}/>}
+      {!isTodo && !isCounter && (
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <button
+            onClick={changeTaskPosation}
+            value={todoType.todo}
+            className='toDoOpenButton'
+          >
+            ToDo
+          </button>
+          <button
+            onClick={changeTaskPosation}
+            value={todoType.counter}
+            className='counterOpenButton'
+          >
+              Counter
+          </button>
+          click on the task you want      
+        </div>
+      )}
     </div>
-  );
+  )
 }
 
 export default App;
